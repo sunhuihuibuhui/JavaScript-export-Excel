@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<button id='btn'>一键导出数据</button>
+	
+	<script src="./JavaScript/ExportExcel.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var dataList = [
+			{
+				name:'张三',
+				age:'33',
+				sex:'男',
+				career:'测试',
+				address:'某市某区某街道张家庄',
+				ID:'1234567890987654321'
+			},
+			{
+				name:'李四',
+				age:'44',
+				sex:'男',
+				career:'产品',
+				address:'某市某区某街道李家村',
+				ID:'1234567890987654321'
+			},
+			{
+				name:'王五',
+				age:'44',
+				sex:'男',
+				career:'码农',
+				address:'某市某区某街道王家店',
+				ID:'1234567890987654321'
+			},
+		];
+		btn.onclick = function(){
+			var title=['姓名','性别','年龄','职业', '住址'];		//表头
+			var filter = ['ID']		//自定义过滤栏（选择不需要导出的数据）可选项
+			exportExcel(dataList,"人员信息列表",title,filter);
+		}
+	</script>
+</body>
+</html>
